@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Lato:wght@300;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Lato&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="caixa">
+        <div id="conteiner">
+            <p>Que país se fala portugues brasileiro?</p>
+            <label for="pergunta"> Responda: </label>
+            <input type="text" id="pergunta" name="pergunta" required>
+            <button id="botao" onclick="verificar()">Verificar</button>
+        </div>
+        
+        <div id="res"><p id="paragrafo">O resultado aparecerá aqui..</p></div>
+    </div>
+
+    <script>
+        var resposta = 'brasil';
+        var resultado = document.getElementById('res')
+        var entrada = document.getElementById('pergunta')
+        function verificar(){
+            if (entrada.value.trim().toLowerCase() != resposta){
+                resultado.innerHTML = 'Resposta Errada!'
+                resultado.style.borderColor = 'red'
+                resultado.style.borderWidth = '3px'
+                resultado.style.background = 'rgb(245, 61, 61)'
+                resultado.style.textAlign ='center'
+                resultado.style.color = 'black'
+                
+            } else{
+                resultado.innerHTML = 'Resposta Certa'
+                resultado.style.borderColor = 'green'
+                resultado.style.borderWidth ='2px'
+                resultado.style.background = 'greenyellow'
+                resultado.style.textAlign = 'center'
+                resultado.style.color = 'black'
+            }
+
+        }
+    </script>
+</body>
+</html>
